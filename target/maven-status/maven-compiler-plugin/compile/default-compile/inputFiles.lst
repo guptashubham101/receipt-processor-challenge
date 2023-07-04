@@ -1,0 +1,10 @@
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/ReceiptsMain.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/repositoryImpl/ReceiptRepositoryImpl.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/entities/Item.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/models/PointsDTO.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/entities/Receipt.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/models/ReceiptDTO.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/services/ReceiptService.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/repository/ReceiptRepository.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/serviceImpl/ReceiptServiceImpl.java
+/Users/shubhamgupta/Downloads/776_Backend/src/main/java/com/fetch/receipt/controllers/ReceiptsController.java
