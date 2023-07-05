@@ -24,7 +24,7 @@ public class ReceiptsController {
 	@PostMapping(value = "/process")
 	public ReceiptDTO saveReceipts(@RequestBody Receipt receipts) {
 
-		return receiptService.saveReceipt(receipts); 
+		return receiptService.saveReceipt(receipts);
 	}
 
 	// GET request to return points of a particular ID

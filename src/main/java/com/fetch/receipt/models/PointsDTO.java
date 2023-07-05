@@ -15,5 +15,5 @@ public class PointsDTO {
 	public void setPoints(Integer points) {
 		this.points = points;
 	}
-	
+
 }

@@ -10,27 +10,27 @@ import com.fetch.receipt.entities.Receipt;
 import com.fetch.receipt.repository.ReceiptRepository;
 
 @Repository
-public class ReceiptRepositoryImpl implements ReceiptRepository{
+public class ReceiptRepositoryImpl implements ReceiptRepository {
 
-	//Using map to store the receipt in memory
-	private Map<String, Receipt> map = new ConcurrentHashMap<>(); 
-	
+	// Using map to store the receipt in memory
+	private Map<String, Receipt> map = new ConcurrentHashMap<>();
+
 	@Override
 	public Receipt createReceipt(Receipt receiptObj) {
-		
-		//Generate Random UUID
+
+		// Generate Random UUID
 		UUID uuid = UUID.randomUUID();
 		receiptObj.setId(uuid.toString());
-		
-		//Save in a map 
+
+		// Save in a map
 		map.put(uuid.toString(), receiptObj);
 		return receiptObj;
 	}
-	
+
 	@Override
 	public Receipt getReceipt(String id) {
-		
+
 		return map.get(id);
 	}
-	
+
 }

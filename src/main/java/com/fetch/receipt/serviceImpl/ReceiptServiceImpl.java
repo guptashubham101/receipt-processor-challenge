@@ -22,9 +22,9 @@ public class ReceiptServiceImpl implements ReceiptService {
 	public PointsDTO getPoints(String id) {
 		// Retrieve receipt from map through ID
 		Receipt receiptObj = receiptRepository.getReceipt(id);
-		
-		//If ID is present in map then calculates the points
-		if(receiptObj != null)
+
+		// If ID is present in map then calculates the points
+		if (receiptObj != null)
 			return new PointsDTO(calculatePoints(receiptObj));
 		else
 			return new PointsDTO(0);
@@ -33,10 +33,10 @@ public class ReceiptServiceImpl implements ReceiptService {
 	@Override
 	public ReceiptDTO saveReceipt(Receipt receiptObj) {
 
-		//Save the receipt in in-memory
+		// Save the receipt in in-memory
 		receiptObj = receiptRepository.createReceipt(receiptObj);
 
-		//Return the generated ID
+		// Return the generated ID
 		return new ReceiptDTO(receiptObj.getId());
 	}
 
