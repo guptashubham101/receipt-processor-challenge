@@ -1,5 +1,12 @@
 package com.fetch.receipt.entities;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Getter
+@Setter
 public class Item {
 
 	String shortDescription;
@@ -8,22 +15,6 @@ public class Item {
 	public Item(String shortDescription, String price) {
 		super();
 		this.shortDescription = shortDescription;
-		this.price = price;
-	}
-
-	public String getShortDescription() {
-		return shortDescription;
-	}
-
-	public void setShortDescription(String shortDescription) {
-		this.shortDescription = shortDescription;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
 		this.price = price;
 	}
 
