@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fetch.models.PointsDTO;
-import com.fetch.models.ReceiptDTO;
 import com.fetch.receipt.entities.Item;
 import com.fetch.receipt.entities.Receipt;
+import com.fetch.receipt.models.PointsDTO;
+import com.fetch.receipt.models.ReceiptDTO;
 import com.fetch.receipt.repository.ReceiptRepository;
 import com.fetch.receipt.services.ReceiptService;
 

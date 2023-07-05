@@ -1,10 +1,10 @@
-com/fetch/models/PointsDTO.class
 com/fetch/receipt/serviceImpl/ReceiptServiceImpl.class
 com/fetch/receipt/entities/Receipt.class
-com/fetch/models/ReceiptDTO.class
 com/fetch/receipt/repository/ReceiptRepository.class
 com/fetch/receipt/services/ReceiptService.class
+com/fetch/receipt/models/PointsDTO.class
 com/fetch/receipt/repositoryImpl/ReceiptRepositoryImpl.class
+com/fetch/receipt/models/ReceiptDTO.class
 com/fetch/receipt/ReceiptsMain.class
 com/fetch/receipt/controllers/ReceiptsController.class
 com/fetch/receipt/entities/Item.class

@@ -1,4 +1,4 @@
-package com.fetch.models;
+package com.fetch.receipt.models;
 
 public class ReceiptDTO {
 	String id;

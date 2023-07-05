@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fetch.models.PointsDTO;
-import com.fetch.models.ReceiptDTO;
 import com.fetch.receipt.entities.Receipt;
+import com.fetch.receipt.models.PointsDTO;
+import com.fetch.receipt.models.ReceiptDTO;
 import com.fetch.receipt.services.ReceiptService;
 
 @RequestMapping("receipts")
