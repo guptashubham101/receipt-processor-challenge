@@ -27,3 +27,5 @@ servicesImpl: Actual business logic of the POST/GET requests which implements th
 repository: Interfaces for repository
 
 repositoryImpl: Saving the receipt object in the in-memory database
+
+tests: Added the basic JUnit test to test the controller, services and repository by giving the sample receipt object

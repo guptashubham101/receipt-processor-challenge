@@ -6,42 +6,35 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.jupiter.api.TestInstance;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fetch.receipt.entities.Item;
 import com.fetch.receipt.entities.Receipt;
 import com.fetch.receipt.models.PointsDTO;
 import com.fetch.receipt.models.ReceiptDTO;
 import com.fetch.receipt.repository.ReceiptRepository;
-import com.fetch.receipt.serviceImpl.ReceiptServiceImpl;
+import com.fetch.receipt.services.ReceiptService;
 
-//@ExtendWith(MockitoExtension.class)
-//@SpringBootTest
-@RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class WebLayerTest {
 
-	@Mock
-	ReceiptRepository receiptRepository;
+	@Autowired
+	private ReceiptRepository receiptRepository;
 
-	@InjectMocks
-	private ReceiptServiceImpl receiptService;
+	@Autowired
+	private ReceiptService receiptService;
 
-	private Receipt receipt;
+	Receipt receipt;
+	private String id;
 
-	private static String id;
-
-	@BeforeEach
+	@BeforeAll
 	public void setup() {
-		receiptRepository = Mockito.mock(ReceiptRepository.class);
-		receiptService = Mockito.mock(ReceiptServiceImpl.class);
-
 		List<Item> items = new ArrayList<>();
 		items.add(new Item("Mountain Dew 12PK", "6.49"));
 		items.add(new Item("Emils Cheese Pizza", "12.25"));
@@ -55,17 +48,13 @@ public class WebLayerTest {
 	@Test
 	public void givenReceiptObject_whenSaveReceipt_thenReturnID() {
 
-		System.out.println(receiptRepository);
-		System.out.println(receiptService);
-		System.out.println(receipt.getPurchaseDate());
-
 		// action taken to save receipt object
 		Receipt savedReceipt = receiptRepository.createReceipt(receipt);
 
-		System.out.println(savedReceipt);
 		// then - verify the output
 		this.id = savedReceipt.getId();
 		assertNotNull(savedReceipt.getId());
+		System.out.println("ReceiptId:" + savedReceipt.getId());
 	}
 
 	@DisplayName("JUnit test to check save receipt API (POST)")
@@ -75,7 +64,6 @@ public class WebLayerTest {
 		// action taken to save receipt object
 		ReceiptDTO savedReceipt = receiptService.saveReceipt(receipt);
 
-		System.out.println(savedReceipt);
 		// then - verify the output
 		assertNotNull(savedReceipt.getId());
 		this.id = savedReceipt.getId();
@@ -88,7 +76,6 @@ public class WebLayerTest {
 		// action taken to give receipt ID
 		PointsDTO points = receiptService.getPoints(this.id);
 
-		System.out.println(points);
 		// then - verify the output (28 is the output of the saved receipt - Given in
 		// examples)
 		assertEquals(points.getPoints(), 28);
