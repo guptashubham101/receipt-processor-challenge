@@ -14,7 +14,7 @@ import com.fetch.receipt.services.ReceiptService;
 
 @Service
 public class ReceiptServiceImpl implements ReceiptService {
-
+	
 	@Autowired
 	ReceiptRepository receiptRepository;
 

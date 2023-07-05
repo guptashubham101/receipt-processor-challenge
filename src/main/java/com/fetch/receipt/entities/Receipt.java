@@ -11,6 +11,15 @@ public class Receipt {
 	List<Item> items;
 	String id;
 
+	public Receipt(String retailer, String purchaseDate, String purchaseTime, String total, List<Item> items) {
+		super();
+		this.retailer = retailer;
+		this.purchaseDate = purchaseDate;
+		this.purchaseTime = purchaseTime;
+		this.total = total;
+		this.items = items;
+	}
+
 	public String getRetailer() {
 		return retailer;
 	}
